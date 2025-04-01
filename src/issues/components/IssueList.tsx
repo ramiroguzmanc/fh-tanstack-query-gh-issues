@@ -1,6 +1,12 @@
+import { GitHubIssue } from '../models';
 import { IssueItem } from './IssueItem';
 
-export const IssueList = () => {
+interface Props {
+  issues: GitHubIssue[]
+}
+
+export const IssueList = ({ issues }: Props) => {
+
   return (
     <>
       {/* Botones de All, Open, Closed */}
@@ -11,9 +17,9 @@ export const IssueList = () => {
       </div>
 
       {/* Lista de issues */}
-      <div className="mt-4">
-        {[1, 2, 3].map((issue) => (
-          <IssueItem key={issue} />
+      <div className="mt-4 animate-fadeIn">
+        {issues.map((issue) => (
+          <IssueItem key={issue.id} issue={issue} />
         ))}
       </div>
     </>
