@@ -15,6 +15,7 @@ export const LabelPicker = () => {
     <section className="flex flex-wrap gap-1">
     {labelsQuery.data?.map((label) => (
       <span
+        key={label.id}
         className="px-2 py-1 text-xs font-semibold rounded-full cursor-pointer animate-fadeIn hover:bg-slate-800"
         style={{ border: `1px solid #${label.color}`, color: `#${label.color}` }}
       >
