@@ -1,10 +1,18 @@
 import { gitHubApi } from "../../api"
 import { Sleep } from "../../helpers"
-import { GitHubIssue } from "../models"
+import { GitHubIssue, State } from "../models"
 
-export const getIssues = async (): Promise<GitHubIssue[]> => {
+export const getIssues = async (state: State): Promise<GitHubIssue[]> => {
   await Sleep(2000)
-  const { data } = await gitHubApi.get<GitHubIssue[]>('/issues')
+  const params = new URLSearchParams
+
+  if(state !== State.All) {
+    params.append('state', state)
+  }
+
+  const { data } = await gitHubApi.get<GitHubIssue[]>('/issues', {
+    params
+  })
    return data
 }
 
