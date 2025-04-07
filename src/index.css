@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply bg-gray-900 text-white py-4 px-4;
+  @apply px-4 py-4 text-white bg-gray-900;
 }
 
 h1 {
@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl font-bold text-gray-300 my-4;
+  @apply my-4 text-2xl font-bold text-gray-300;
 }
 
 h3 {
@@ -32,13 +32,17 @@ small {
 }
 
 pre {
-  @apply bg-gray-800 text-white p-4 rounded my-2 overflow-auto;
+  @apply p-4 my-2 overflow-auto text-white bg-gray-800 rounded;
 }
 
 .btn {
-  @apply bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-all;
+  @apply px-4 py-2 font-bold text-white transition-all bg-blue-500 border-b-4 border-blue-700 rounded hover:bg-blue-400 hover:border-blue-500;
 }
 
 .active {
-  @apply bg-blue-700 border-blue-500 border-0;
+  @apply bg-blue-700 border-0 border-blue-500;
+}
+
+.selected-label {
+  @apply bg-slate-700 shadow-sm transition-all shadow-white
 }
